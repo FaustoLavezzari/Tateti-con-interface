@@ -16,5 +16,7 @@ namespace Tateti_con_interface
         {
             InitializeComponent();
         }
+
+        
     }
 }
