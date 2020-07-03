@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tateti_con_interface
 {
-    class Jugador
+    public class Jugador
     {
         private string nombre;
         private Ficha ficha;

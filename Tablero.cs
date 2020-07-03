@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tateti_con_interface
 {
-    class Tablero
+    public class Tablero
     {
         private string[,] tablero;
 

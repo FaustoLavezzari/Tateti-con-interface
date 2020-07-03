@@ -12,11 +12,6 @@ namespace Tateti_con_interface
 {
     public partial class Bienvenida : Form
     {
-        private Jugador jugador1;
-        private Jugador jugador2;
-        private List<Ficha> fichas;
-
-
         public Bienvenida()
         {
             InitializeComponent();
@@ -44,8 +39,12 @@ namespace Tateti_con_interface
             {
                 case 2:
                     {
+                        Jugador jugador1 = new Jugador(Nombrej1.Text.Trim(), (Ficha)SeleccionadorFichaj1.SelectedItem);
+                        Jugador jugador2 = new Jugador(Nombrej2.Text.Trim(), (Ficha)SeleccionadorFichaj2.SelectedItem);                     
+                        Juego ventanaJuego = new Juego(jugador1, jugador2);
+                        ventanaJuego.Show();
+                        this.Close();
                         break;
-
                     }
                 case 0:
                     {
@@ -60,20 +59,18 @@ namespace Tateti_con_interface
                         MessageBoxButtons buttons = MessageBoxButtons.OK;
                         MessageBox.Show(mensaje, "Error", buttons);
                         break;
-
                     }                    
             }
         }
 
         private void Bienvenida_Load(object sender, EventArgs e)
         {
-            fichas = new List<Ficha>();
+           List<Ficha> fichas = new List<Ficha>();
             foreach (Ficha f in Enum.GetValues(typeof(Ficha)))
             {
-                fichas.Add(f);
-            }
-            SeleccionadorFichaj1.DataSource = fichas;
-            SeleccionadorFichaj2.DataSource = fichas;           
+                SeleccionadorFichaj1.Items.Add(f);
+                SeleccionadorFichaj2.Items.Add(f);
+            }                 
         }
     } 
 }
