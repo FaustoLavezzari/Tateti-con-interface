@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Titulo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -37,13 +38,17 @@
             this.Nombrej1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Nombrej2 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.SeleccionadorFichaj2 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.Continuar = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // Titulo
@@ -127,14 +132,47 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.SkyBlue;
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.Nombrej2);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.SeleccionadorFichaj2);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Location = new System.Drawing.Point(285, 143);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(174, 167);
             this.panel2.TabIndex = 3;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(57, 37);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(44, 13);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "Nombre";
+            // 
+            // Nombrej2
+            // 
+            this.Nombrej2.Location = new System.Drawing.Point(23, 53);
+            this.Nombrej2.Name = "Nombrej2";
+            this.Nombrej2.Size = new System.Drawing.Size(129, 20);
+            this.Nombrej2.TabIndex = 7;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(70, 97);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(33, 13);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Ficha";
+            // 
+            // SeleccionadorFichaj2
+            // 
+            this.SeleccionadorFichaj2.FormattingEnabled = true;
+            this.SeleccionadorFichaj2.Location = new System.Drawing.Point(62, 113);
+            this.SeleccionadorFichaj2.Name = "SeleccionadorFichaj2";
+            this.SeleccionadorFichaj2.Size = new System.Drawing.Size(49, 21);
+            this.SeleccionadorFichaj2.TabIndex = 5;
             // 
             // label3
             // 
@@ -146,38 +184,24 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Jugador 2 ";
             // 
-            // label6
+            // Continuar
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(70, 97);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(33, 13);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Ficha";
+            this.Continuar.Location = new System.Drawing.Point(210, 317);
+            this.Continuar.Name = "Continuar";
+            this.Continuar.Size = new System.Drawing.Size(75, 23);
+            this.Continuar.TabIndex = 4;
+            this.Continuar.Text = "Continuar";
+            this.Continuar.UseVisualStyleBackColor = true;
+            this.Continuar.Click += new System.EventHandler(this.Continuar_Click);
             // 
-            // comboBox1
+            // errorProvider1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(62, 113);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(49, 21);
-            this.comboBox1.TabIndex = 5;
+            this.errorProvider1.ContainerControl = this;
             // 
-            // label7
+            // contextMenuStrip1
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(57, 37);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(44, 13);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "Nombre";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(23, 53);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(129, 20);
-            this.textBox1.TabIndex = 7;
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // Bienvenida
             // 
@@ -185,6 +209,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(514, 352);
+            this.Controls.Add(this.Continuar);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
@@ -193,10 +218,12 @@
             this.Name = "Bienvenida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tateti ";
+            this.Load += new System.EventHandler(this.Bienvenida_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,9 +242,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Nombrej2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox SeleccionadorFichaj2;
+        private System.Windows.Forms.Button Continuar;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
 
