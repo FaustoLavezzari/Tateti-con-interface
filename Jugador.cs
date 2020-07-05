@@ -24,5 +24,13 @@ namespace Tateti_con_interface
             }
         }
 
+        public Ficha Ficha
+        {
+            get
+            {
+                return ficha;
+            }
+        }
+
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bienvenida));
             this.Titulo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -38,6 +39,7 @@
             this.Nombrej1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.SeleccionadorFichaj2 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.Nombrej2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -45,7 +47,6 @@
             this.Continuar = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.SeleccionadorFichaj2 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -141,6 +142,14 @@
             this.panel2.Size = new System.Drawing.Size(174, 167);
             this.panel2.TabIndex = 3;
             // 
+            // SeleccionadorFichaj2
+            // 
+            this.SeleccionadorFichaj2.FormattingEnabled = true;
+            this.SeleccionadorFichaj2.Location = new System.Drawing.Point(60, 113);
+            this.SeleccionadorFichaj2.Name = "SeleccionadorFichaj2";
+            this.SeleccionadorFichaj2.Size = new System.Drawing.Size(41, 21);
+            this.SeleccionadorFichaj2.TabIndex = 9;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -195,14 +204,6 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // SeleccionadorFichaj2
-            // 
-            this.SeleccionadorFichaj2.FormattingEnabled = true;
-            this.SeleccionadorFichaj2.Location = new System.Drawing.Point(60, 113);
-            this.SeleccionadorFichaj2.Name = "SeleccionadorFichaj2";
-            this.SeleccionadorFichaj2.Size = new System.Drawing.Size(41, 21);
-            this.SeleccionadorFichaj2.TabIndex = 9;
-            // 
             // Bienvenida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -214,6 +215,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Titulo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Bienvenida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

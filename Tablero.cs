@@ -8,91 +8,68 @@ namespace Tateti_con_interface
 {
     public class Tablero
     {
-        private string[,] tablero;
+        private Ficha[,] tablero;
 
         public Tablero()
         {
-            tablero = new string[3, 3];
-            
-            tablero[0, 0] = "1";
-            tablero[0, 1] = "2";
-            tablero[0, 2] = "3";
-            tablero[1, 0] = "4";
-            tablero[1, 1] = "5";
-            tablero[1, 2] = "6";
-            tablero[2, 0] = "7";
-            tablero[2, 1] = "8";
-            tablero[2, 2] = "9";
+            tablero = new Ficha[3, 3];                      
         }
-
-        public void imprimirTablero()
-        {
-            for (int f = 0; f < 3; f++)
-            {
-                for (int c = 0; c < 3; c++)
-                {
-                    Console.Write(tablero[f, c] + " | ");
-                }
-                Console.WriteLine();
-                Console.WriteLine("---------");
-            }
-        }
-
-        public void setPosicion(string posicion, Ficha ficha)
+       
+        public void setPosicion(int posicion, Ficha ficha)
         {
             switch (posicion)
             {
-                case "1":
-                    tablero[0, 0] = ficha.ToString();
+                case 1:
+                    tablero[0, 0] = ficha;
                     break;
-                case "2":
-                    tablero[0, 1] = ficha.ToString();
+                case 2:
+                    tablero[0, 1] = ficha;
                     break;
-                case "3":
-                    tablero[0, 2] = ficha.ToString();
+                case 3:
+                    tablero[0, 2] = ficha;
                     break;
-                case "4":
-                    tablero[1, 0] = ficha.ToString();
+                case 4:
+                    tablero[1, 0] = ficha;
                     break;
-                case "5":
-                    tablero[1, 1] = ficha.ToString();
+                case 5:
+                    tablero[1, 1] = ficha;
                     break;
-                case "6":
-                    tablero[1, 2] = ficha.ToString();
+                case 6:
+                    tablero[1, 2] = ficha;
                     break;
-                case "7":
-                    tablero[2, 0] = ficha.ToString();
+                case 7:
+                    tablero[2, 0] = ficha;
                     break;
-                case "8":
-                    tablero[2, 1] = ficha.ToString();
+                case 8:
+                    tablero[2, 1] = ficha;
                     break;
-                case "9":
-                    tablero[2, 2] = ficha.ToString();
+                case 9:
+                    tablero[2, 2] = ficha;
                     break;
             }
         }
 
-        public string getPosicion(string posicion)
+        public Ficha getPosicion(int posicion)
         {
             switch (posicion)
             {
-                case "1":
+                case 1:
                     return tablero[0, 0];
-                case "2":
+                case 2:
                     return tablero[0, 1];
-                case "3":
+                case 3:
                     return tablero[0, 2];
-                case "4":
+                case 4:
                     return tablero[1, 0];
-                case "5":
+                case 5:
                     return tablero[1, 1];
-                case "6":
+                case 6:
                     return tablero[1, 2];
-                case "7":
+                case 7:
                     return tablero[2, 0];
-                case "8":
+                case 8:
                     return tablero[2, 1];
-                case "9":
+                case 9:
                     return tablero[2, 2];
             }
 
@@ -136,7 +113,7 @@ namespace Tateti_con_interface
         {
             for (int p = 1; p <= 9; p++)
             {
-                if (!PosicionOcupada(p.ToString()))
+                if (!PosicionOcupada(p))
                 {
                     return false;
                 }
@@ -144,12 +121,12 @@ namespace Tateti_con_interface
             return true;
         }
 
-        public bool PosicionOcupada(string posicion)
+        private bool PosicionOcupada(int posicion)
         {
-            return (getPosicion(posicion).Equals("O") || getPosicion(posicion).Equals("X"));
+            return (getPosicion(posicion).Equals(Ficha.O) || getPosicion(posicion).Equals(Ficha.X));
         }
 
-        public bool jugar(Ficha ficha, string posición)
+        public bool jugar(Ficha ficha, int posición)
         {
             if (!PosicionOcupada(posición))
             {
