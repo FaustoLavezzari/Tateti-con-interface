@@ -37,15 +37,6 @@ namespace Tateti_con_interface
         {
             switch (Validaciones())
             {
-                case 2:
-                    {
-                        Jugador jugador1 = new Jugador(Nombrej1.Text.Trim(), (Ficha)SeleccionadorFichaj1.SelectedItem);
-                        Jugador jugador2 = new Jugador(Nombrej2.Text.Trim(), (Ficha)SeleccionadorFichaj2.SelectedItem);                     
-                        Juego ventanaJuego = new Juego(jugador1, jugador2);
-                        ventanaJuego.Show();
-                        this.Close();
-                        break;
-                    }
                 case 0:
                     {
                         string mensaje = "Ambos jugadores deben ingresar un nombre";
@@ -59,7 +50,17 @@ namespace Tateti_con_interface
                         MessageBoxButtons buttons = MessageBoxButtons.OK;
                         MessageBox.Show(mensaje, "Error", buttons);
                         break;
-                    }                    
+                    }
+
+                case 2:
+                    {
+                        Jugador jugador1 = new Jugador(Nombrej1.Text.Trim(), (Ficha)SeleccionadorFichaj1.SelectedItem);
+                        Jugador jugador2 = new Jugador(Nombrej2.Text.Trim(), (Ficha)SeleccionadorFichaj2.SelectedItem);
+                        Juego ventanaJuego = new Juego(jugador1, jugador2);
+                        ventanaJuego.Show();
+                        this.Close();
+                        break;
+                    }
             }
         }
 
@@ -68,8 +69,10 @@ namespace Tateti_con_interface
            List<Ficha> fichas = new List<Ficha>();
             foreach (Ficha f in Enum.GetValues(typeof(Ficha)))
             {
-                SeleccionadorFichaj1.Items.Add(f);
-                SeleccionadorFichaj2.Items.Add(f);
+                if(f != Ficha.Y) {
+                    SeleccionadorFichaj1.Items.Add(f);
+                    SeleccionadorFichaj2.Items.Add(f);
+                }
             }                 
         }
     } 

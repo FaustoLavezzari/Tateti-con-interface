@@ -8,6 +8,6 @@ namespace Tateti_con_interface
 {
     public enum Ficha
     {
-        O=1, X=2  
+        O=1, X=2 , Y=3
     }
 }

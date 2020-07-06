@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,7 +13,10 @@ namespace Tateti_con_interface
 
         public Tablero()
         {
-            tablero = new Ficha[3, 3];                      
+            tablero = new Ficha[3, 3];
+            for (int i = 0; i < 3; i++)
+                for (int j = 0; j < 3; j++)
+                    tablero[i,j] = Ficha.Y;
         }
        
         public void setPosicion(int posicion, Ficha ficha)
@@ -82,9 +86,10 @@ namespace Tateti_con_interface
             // Verificiar filas
             for (int f = 0; f < 3; f++)
             {
-                if (tablero[f, 0].Equals(tablero[f, 1]) && tablero[f, 1].Equals(tablero[f, 2]) )
+                if (tablero[f, 0].Equals(tablero[f, 1]) && tablero[f, 1].Equals(tablero[f, 2]))
                 {
-                    return true;
+                    if ((tablero[f, 0] != Ficha.Y) && (tablero[f, 1] != Ficha.Y) && (tablero[f, 2] != Ficha.Y))
+                        return true;
                 }
             }
             // Verificar columnas
@@ -92,20 +97,22 @@ namespace Tateti_con_interface
             {
                 if (tablero[0, c].Equals(tablero[1, c]) && tablero[1, c].Equals(tablero[2, c]))
                 {
-                    return true;
+                    if ((tablero[0, c] != Ficha.Y) && (tablero[1, c] != Ficha.Y) && (tablero[2, c] != Ficha.Y))
+                        return true;
                 }
             }
             //Verificar diagonal principal
             if (tablero[0, 0].Equals(tablero[1, 1]) && tablero[1, 1].Equals(tablero[2, 2]))
             {
-                return true;
+                if ((tablero[0, 0] != Ficha.Y) && (tablero[1, 1] != Ficha.Y) && (tablero[2, 2] != Ficha.Y))
+                    return true;
             }
             //Verificar diagonal opuesta
             if (tablero[0, 2].Equals(tablero[1, 1]) && tablero[1, 1].Equals(tablero[2, 0]))
             {
-                return true;
+                if ((tablero[0, 2] != Ficha.Y) && (tablero[1, 1] != Ficha.Y) && (tablero[2, 0] != Ficha.Y))
+                    return true;
             }
-
             return false;
         }
 
