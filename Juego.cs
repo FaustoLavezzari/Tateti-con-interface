@@ -79,7 +79,7 @@ namespace Tateti_con_interface
                     break;
                 case "ComienzaAleatorio":
                     Random random = new Random();
-                    bool randombool = random.Next(0, 1) > 0;
+                    bool randombool = random.Next(100) < 50;
                     if (randombool)
                     {
                         this.turno = jugador1;
@@ -171,8 +171,8 @@ namespace Tateti_con_interface
             foreach (Control c in SeleccionadorDeTurno.Controls)
             {
                 if (c.Text == "¡A JUGAR!")
-                {
-                    c.Visible = false;
+                {                    
+                    SeleccionadorDeTurno.Controls.Remove(c);
                 }
                 else
                 {
