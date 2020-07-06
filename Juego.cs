@@ -50,7 +50,10 @@ namespace Tateti_con_interface
 
         private void seleccionadorDeTurno(object sender, EventArgs e)
         {
-            SeleccionadorDeTurno.Controls.Clear();
+            foreach (Control c in SeleccionadorDeTurno.Controls)
+            {
+                c.Visible = false;
+            }
             
             Label Ajugar = new Label();
             Ajugar.AutoSize = true;
@@ -76,7 +79,7 @@ namespace Tateti_con_interface
                     break;
                 case "ComienzaAleatorio":
                     Random random = new Random();
-                    bool randombool = random.Next(0, 2) > 0;
+                    bool randombool = random.Next(0, 1) > 0;
                     if (randombool)
                     {
                         this.turno = jugador1;
@@ -159,7 +162,25 @@ namespace Tateti_con_interface
 
         private void Reiniciar(object sender, EventArgs e)
         {
-
+            foreach(Button button in botones)
+            {
+                button.BackgroundImage = null;
+                button.Enabled = false;
+            }
+            tablero = new Tablero();
+            foreach (Control c in SeleccionadorDeTurno.Controls)
+            {
+                if (c.Text == "¡A JUGAR!")
+                {
+                    c.Visible = false;
+                }
+                else
+                {
+                    c.Visible = true;
+                }
+            
+            }
+            
         }
     }
 }

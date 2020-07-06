@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Juego));
-            this.Tablerop = new System.Windows.Forms.PictureBox();
             this.b5 = new System.Windows.Forms.Button();
             this.b4 = new System.Windows.Forms.Button();
             this.b7 = new System.Windows.Forms.Button();
@@ -53,21 +52,12 @@
             this.Comienzaj2 = new System.Windows.Forms.Button();
             this.Comienzaj1 = new System.Windows.Forms.Button();
             this.Reset = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.Tablerop)).BeginInit();
+            this.Tablerop = new System.Windows.Forms.PictureBox();
             this.Jugador1pan.SuspendLayout();
             this.Jugador2pan.SuspendLayout();
             this.SeleccionadorDeTurno.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Tablerop)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Tablerop
-            // 
-            this.Tablerop.Image = global::Tateti_con_interface.Properties.Resources.tablero;
-            this.Tablerop.Location = new System.Drawing.Point(117, 66);
-            this.Tablerop.Name = "Tablerop";
-            this.Tablerop.Size = new System.Drawing.Size(275, 230);
-            this.Tablerop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Tablerop.TabIndex = 0;
-            this.Tablerop.TabStop = false;
             // 
             // b5
             // 
@@ -331,6 +321,17 @@
             this.Reset.TabIndex = 22;
             this.Reset.Text = "Reiniciar";
             this.Reset.UseVisualStyleBackColor = true;
+            this.Reset.Click += new System.EventHandler(this.Reiniciar);
+            // 
+            // Tablerop
+            // 
+            this.Tablerop.Image = global::Tateti_con_interface.Properties.Resources.tablero;
+            this.Tablerop.Location = new System.Drawing.Point(117, 66);
+            this.Tablerop.Name = "Tablerop";
+            this.Tablerop.Size = new System.Drawing.Size(275, 230);
+            this.Tablerop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Tablerop.TabIndex = 0;
+            this.Tablerop.TabStop = false;
             // 
             // Juego
             // 
@@ -358,13 +359,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tateti";
             this.Load += new System.EventHandler(this.Juego_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.Tablerop)).EndInit();
             this.Jugador1pan.ResumeLayout(false);
             this.Jugador1pan.PerformLayout();
             this.Jugador2pan.ResumeLayout(false);
             this.Jugador2pan.PerformLayout();
             this.SeleccionadorDeTurno.ResumeLayout(false);
             this.SeleccionadorDeTurno.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Tablerop)).EndInit();
             this.ResumeLayout(false);
 
         }
