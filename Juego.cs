@@ -180,7 +180,7 @@ namespace Tateti_con_interface
                 }
             
             }
-            
+            Reset.Text = "Reiniciar";          
         }
     }
 }
