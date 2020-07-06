@@ -44,6 +44,7 @@ namespace Tateti_con_interface
             foreach (Button button in botones)
             {
                 button.Enabled = false;
+                button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             }           
         }
 
@@ -128,6 +129,7 @@ namespace Tateti_con_interface
                 string mensaje = "¡EMPATE, MEJOR SUERTE LA PROXIMA!";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 MessageBox.Show(mensaje, "Resultado", buttons);
+                Reset.Text = "Jugar de nuevo";
             }
             else if(tablero.hayGanador())
             {
@@ -138,6 +140,7 @@ namespace Tateti_con_interface
                 {
                     button.Enabled = false;
                 }
+                Reset.Text = "Jugar de nuevo";
             }
 
             casillero.Enabled = false;
@@ -152,8 +155,10 @@ namespace Tateti_con_interface
                 turno = jugador1;
             }
             casillero.BackgroundImageLayout = ImageLayout.Stretch;
+        }
 
-           
+        private void Reiniciar(object sender, EventArgs e)
+        {
 
         }
     }

@@ -109,6 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icono.ico" />
+    <None Include="recursos\cruz %282%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

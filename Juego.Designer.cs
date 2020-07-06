@@ -52,6 +52,7 @@
             this.ComienzaAleatorio = new System.Windows.Forms.Button();
             this.Comienzaj2 = new System.Windows.Forms.Button();
             this.Comienzaj1 = new System.Windows.Forms.Button();
+            this.Reset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Tablerop)).BeginInit();
             this.Jugador1pan.SuspendLayout();
             this.Jugador2pan.SuspendLayout();
@@ -71,52 +72,52 @@
             // b5
             // 
             this.b5.BackColor = System.Drawing.Color.Transparent;
+            this.b5.CausesValidation = false;
             this.b5.FlatAppearance.BorderSize = 0;
             this.b5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.b5.Location = new System.Drawing.Point(217, 146);
             this.b5.Name = "b5";
             this.b5.Size = new System.Drawing.Size(71, 68);
             this.b5.TabIndex = 3;
-            this.b5.Text = "b5";
             this.b5.UseVisualStyleBackColor = false;
             this.b5.Click += new System.EventHandler(this.AccionCasillero);
             // 
             // b4
             // 
             this.b4.BackColor = System.Drawing.Color.Transparent;
+            this.b4.CausesValidation = false;
             this.b4.FlatAppearance.BorderSize = 0;
             this.b4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.b4.Location = new System.Drawing.Point(140, 145);
             this.b4.Name = "b4";
             this.b4.Size = new System.Drawing.Size(71, 68);
             this.b4.TabIndex = 5;
-            this.b4.Text = "b4";
             this.b4.UseVisualStyleBackColor = false;
             this.b4.Click += new System.EventHandler(this.AccionCasillero);
             // 
             // b7
             // 
             this.b7.BackColor = System.Drawing.Color.Transparent;
+            this.b7.CausesValidation = false;
             this.b7.FlatAppearance.BorderSize = 0;
             this.b7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.b7.Location = new System.Drawing.Point(139, 223);
             this.b7.Name = "b7";
             this.b7.Size = new System.Drawing.Size(71, 68);
             this.b7.TabIndex = 6;
-            this.b7.Text = "b7";
             this.b7.UseVisualStyleBackColor = false;
             this.b7.Click += new System.EventHandler(this.AccionCasillero);
             // 
             // b8
             // 
             this.b8.BackColor = System.Drawing.Color.Transparent;
+            this.b8.CausesValidation = false;
             this.b8.FlatAppearance.BorderSize = 0;
             this.b8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.b8.Location = new System.Drawing.Point(217, 224);
             this.b8.Name = "b8";
             this.b8.Size = new System.Drawing.Size(71, 68);
             this.b8.TabIndex = 7;
-            this.b8.Text = "b8";
             this.b8.UseVisualStyleBackColor = false;
             this.b8.Click += new System.EventHandler(this.AccionCasillero);
             // 
@@ -133,59 +134,58 @@
             this.b9.Name = "b9";
             this.b9.Size = new System.Drawing.Size(71, 68);
             this.b9.TabIndex = 8;
-            this.b9.Text = "b9";
             this.b9.UseVisualStyleBackColor = false;
             this.b9.Click += new System.EventHandler(this.AccionCasillero);
             // 
             // b6
             // 
             this.b6.BackColor = System.Drawing.Color.Transparent;
+            this.b6.CausesValidation = false;
             this.b6.FlatAppearance.BorderSize = 0;
             this.b6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.b6.Location = new System.Drawing.Point(297, 146);
             this.b6.Name = "b6";
             this.b6.Size = new System.Drawing.Size(71, 68);
             this.b6.TabIndex = 9;
-            this.b6.Text = "b6";
             this.b6.UseVisualStyleBackColor = false;
             this.b6.Click += new System.EventHandler(this.AccionCasillero);
             // 
             // b1
             // 
             this.b1.BackColor = System.Drawing.Color.Transparent;
+            this.b1.CausesValidation = false;
             this.b1.FlatAppearance.BorderSize = 0;
             this.b1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.b1.Location = new System.Drawing.Point(140, 68);
             this.b1.Name = "b1";
             this.b1.Size = new System.Drawing.Size(71, 68);
             this.b1.TabIndex = 10;
-            this.b1.Text = "b1";
             this.b1.UseVisualStyleBackColor = false;
             this.b1.Click += new System.EventHandler(this.AccionCasillero);
             // 
             // b2
             // 
             this.b2.BackColor = System.Drawing.Color.Transparent;
+            this.b2.CausesValidation = false;
             this.b2.FlatAppearance.BorderSize = 0;
             this.b2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.b2.Location = new System.Drawing.Point(217, 68);
             this.b2.Name = "b2";
             this.b2.Size = new System.Drawing.Size(71, 68);
             this.b2.TabIndex = 11;
-            this.b2.Text = "b2";
             this.b2.UseVisualStyleBackColor = false;
             this.b2.Click += new System.EventHandler(this.AccionCasillero);
             // 
             // b3
             // 
             this.b3.BackColor = System.Drawing.Color.Transparent;
+            this.b3.CausesValidation = false;
             this.b3.FlatAppearance.BorderSize = 0;
             this.b3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.b3.Location = new System.Drawing.Point(297, 68);
             this.b3.Name = "b3";
             this.b3.Size = new System.Drawing.Size(71, 68);
             this.b3.TabIndex = 12;
-            this.b3.Text = "b3";
             this.b3.UseVisualStyleBackColor = false;
             this.b3.Click += new System.EventHandler(this.AccionCasillero);
             // 
@@ -323,12 +323,22 @@
             this.Comienzaj1.UseVisualStyleBackColor = true;
             this.Comienzaj1.Click += new System.EventHandler(this.seleccionadorDeTurno);
             // 
+            // Reset
+            // 
+            this.Reset.Location = new System.Drawing.Point(200, 317);
+            this.Reset.Name = "Reset";
+            this.Reset.Size = new System.Drawing.Size(92, 23);
+            this.Reset.TabIndex = 22;
+            this.Reset.Text = "Reiniciar";
+            this.Reset.UseVisualStyleBackColor = true;
+            // 
             // Juego
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(514, 352);
+            this.Controls.Add(this.Reset);
             this.Controls.Add(this.SeleccionadorDeTurno);
             this.Controls.Add(this.Jugador2pan);
             this.Controls.Add(this.Jugador1pan);
@@ -384,5 +394,6 @@
         private System.Windows.Forms.Button ComienzaAleatorio;
         private System.Windows.Forms.Button Comienzaj2;
         private System.Windows.Forms.Button Comienzaj1;
+        private System.Windows.Forms.Button Reset;
     }
 }

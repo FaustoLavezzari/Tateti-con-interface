@@ -66,7 +66,9 @@ namespace Tateti_con_interface
 
         private void Bienvenida_Load(object sender, EventArgs e)
         {
-           List<Ficha> fichas = new List<Ficha>();
+            SeleccionadorFichaj1.DropDownStyle = ComboBoxStyle.DropDownList;
+            SeleccionadorFichaj2.DropDownStyle = ComboBoxStyle.DropDownList;
+
             foreach (Ficha f in Enum.GetValues(typeof(Ficha)))
             {
                 if(f != Ficha.Y) {
