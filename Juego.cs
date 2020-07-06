@@ -47,9 +47,8 @@ namespace Tateti_con_interface
             }           
         }
 
-        private void seleccionadorDeTurno(Jugador turno)
+        private void seleccionadorDeTurno(object sender, EventArgs e)
         {
-            this.turno = turno;
             SeleccionadorDeTurno.Controls.Clear();
             
             Label Ajugar = new Label();
@@ -65,30 +64,27 @@ namespace Tateti_con_interface
             {
                 button.Enabled = true;
             }
-        }
 
-        private void Comienzaj1_Click(object sender, EventArgs e)
-        {
-            seleccionadorDeTurno(jugador1);
-        }
-
-        private void Comienzaj2_Click(object sender, EventArgs e)
-        {
-            seleccionadorDeTurno(jugador2);
-        }
-
-        private void ComienzaAleatorio_Click(object sender, EventArgs e)
-        {
-            Random random = new Random();
-            bool radombool = random.Next(0, 2) > 0;
-
-            if (radombool)
+            switch (((Button)sender).Name)
             {
-                seleccionadorDeTurno(jugador1);
-            }
-            else
-            {
-                seleccionadorDeTurno(jugador2);
+                case "Comienzaj1":
+                    this.turno = jugador1;
+                    break;
+                case "Comienzaj2":
+                    this.turno = jugador2;
+                    break;
+                case "ComienzaAleatorio":
+                    Random random = new Random();
+                    bool randombool = random.Next(0, 2) > 0;
+                    if (randombool)
+                    {
+                        this.turno = jugador1;
+                    }
+                    else
+                    {
+                        this.turno = jugador2;
+                    }
+                    break;
             }
         }
 
@@ -127,18 +123,38 @@ namespace Tateti_con_interface
                     break;                                                       
             }
 
+            if (tablero.hayEmpate())
+            {
+                string mensaje = "¡EMPATE, MEJOR SUERTE LA PROXIMA!";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(mensaje, "Resultado", buttons);
+            }
+            else if(tablero.hayGanador())
+            {
+                string mensaje = "¡" + turno.Nombre.ToUpper() + " GANÓ LA PARTIDA!";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(mensaje, "Resultado", buttons);
+                foreach (Button button in botones)
+                {
+                    button.Enabled = false;
+                }
+            }
+
             casillero.Enabled = false;
             if (turno.Ficha.Equals(Ficha.O))
             {
-                casillero.Image = Tateti_con_interface.Properties.Resources.circulo;
+                casillero.BackgroundImage = Tateti_con_interface.Properties.Resources.circulo;
+                turno = jugador2;
             }
             else
             {
-                casillero.Image = Tateti_con_interface.Properties.Resources.cruz;
+                casillero.BackgroundImage = Tateti_con_interface.Properties.Resources.cruz;
+                turno = jugador1;
             }
-            casillero.ImageAlign = ContentAlignment.MiddleCenter;
+            casillero.BackgroundImageLayout = ImageLayout.Stretch;
+
+           
+
         }
-
-
     }
 }

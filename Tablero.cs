@@ -82,7 +82,7 @@ namespace Tateti_con_interface
             // Verificiar filas
             for (int f = 0; f < 3; f++)
             {
-                if (tablero[f, 0].Equals(tablero[f, 1]) && tablero[f, 1].Equals(tablero[f, 2]))
+                if (tablero[f, 0].Equals(tablero[f, 1]) && tablero[f, 1].Equals(tablero[f, 2]) )
                 {
                     return true;
                 }

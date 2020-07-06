@@ -16,6 +16,7 @@ namespace Tateti_con_interface
             this.nombre = nombre;
             this.ficha = ficha;
         }
+
         public string Nombre
         {
             get
