@@ -116,6 +116,7 @@ namespace Tateti_con_interface
             return false;
         }
 
+
         public bool hayEmpate()
         {
             for (int p = 1; p <= 9; p++)
